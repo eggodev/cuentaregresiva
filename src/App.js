@@ -58,13 +58,6 @@ export default class App extends Component {
             name="description"
             content="Contador regresivo configurable para eventos especiales"
           />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta
-            name="keywords"
-            content="mobile portfolio, mobile portfolio site"
-          />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Helmet>
         <SearchImages changeBg={this.changeBg} />
         <CountDown />
