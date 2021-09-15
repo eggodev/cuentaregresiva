@@ -56,7 +56,7 @@ export default class App extends Component {
           <link rel="canonical" href="http://mysite.com/example" />
           <meta
             name="description"
-            content="Muestra un contador regresivo para llegar a un evento en especial"
+            content="Contador regresivo configurable para eventos especiales"
           />
         </Helmet>
         <SearchImages changeBg={this.changeBg} />
