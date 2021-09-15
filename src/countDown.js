@@ -59,6 +59,15 @@ export default class CountDown extends Component {
     }
   };
 
+  setEventTitle = (event) => {
+    if (event.key === "Enter") {
+      if (this.eventInput.current.value !== "") {
+        this.setState({ event: this.eventInput.current.value });
+        this.setLocalStorage("event", this.eventInput.current.value);
+      }
+    }
+  };
+
   setLocalStorage = (key, value) => {
     localStorage.setItem(key, value);
   };
@@ -117,6 +126,7 @@ export default class CountDown extends Component {
                 ref={this.eventInput}
                 className="eventInput"
                 maxLength="40"
+                onKeyDown={(e) => this.setEventTitle(e)}
               ></input>
             </div>
             <div style={{ position: "relative" }}>{children}</div>
