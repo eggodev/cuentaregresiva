@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@300;400;600&display=swap");
+
+/*   color variables */
+$clr-primary: #ff7043;
+$clr-primary-hover: #29e6a7;
+$clr-primary-dark: #039d69;
+$clr-lightBlue: #c6e2ff;
+$clr-gray100: #f9fbff;
+$clr-gray150: #f4f6fb;
+$clr-gray200: #eef1f6;
+$clr-gray300: #e1e5ee;
+$clr-gray350: #c7ccdb;
+$clr-gray400: #767b91;
+$clr-gray500: #4f546c;
+$clr-gray600: #2a324b;
+$clr-gray700: #161d34;
+
+/*   border radius */
+$radius: 0.2rem;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Exo", sans-serif;
+  font-weight: 700;
+  height: 100vh;
+  display: flex;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.search {
+  margin-left: 1rem;
+  margin-top: 0.7rem;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 4rem;
+
+  svg {
+    height: 2.5rem;
+    padding: 0.5rem;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  &__icon {
+    fill: $clr-gray400;
+    z-index: 99;
+    width: 50px;
+  }
+
+  &__close {
+    right: 4px;
+    fill: white;
+    transition: 500ms fill ease-in;
+  }
+
+  &__delete {
+    fill: $clr-gray350;
+    right: 3.1rem;
+    display: none;
+    padding: 0;
+    // background-color: #4f546c;
+  }
+
+  input {
+    //box-shadow: 0 0 10px 2px $clr-gray300;
+    border: none;
+    border-radius: 50%;
+    padding: 0.9rem 1.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: $clr-gray400;
+    outline: none;
+    width: 1.5rem;
+    transition: 500ms width ease-in-out, 500ms padding ease-in-out,
+      500ms border-radius ease-in-out;
+
+    &:not(:placeholder-shown) ~ .search__delete {
+      display: block;
+    }
+  }
+
+  //open state
+  &-open input {
+    width: 25rem;
+    padding: 1.5rem 8rem 1.5rem 4rem;
+    border-radius: $radius;
+  }
+  .search__delete_close {
+    display: none;
+  }
+
+  //when content is in text field show delete button
+  &-open svg.search__close {
+    fill: $clr-gray400;
+  }
+}
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  width: 25rem;
+  margin-left: 1rem;
+  z-index: 9;
+}
+.card {
+  display: flex;
+}
+.card--image {
+  flex: 100%;
+  margin-top: 1rem;
+  border-radius: 10px;
+  transition: transform 0.2s;
+  width: 100px;
+}
+.card--image:hover {
+  transform: scale(1.05);
+}
+
+.countdownContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+.counterContainer {
+  display: flex;
+  margin-top: 3rem;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendarContainer {
+  background-color: #f0f0f0;
+  text-align: center;
+  padding-top: 0.5rem;
+}
+.calendarBtn {
+  width: 50px;
+  height: 50px;
+  transform: translateZ(0);
+  position: fixed;
+  top: 80px;
+  left: 17px;
+}
+.datePicker {
+  margin-top: 2rem;
+}
+.eventInput {
+  width: 14rem;
+  border: 0;
+  padding: 5px;
+  text-align: center;
+  background-color: $clr-lightBlue;
+}
+
+.titleLbl {
+  font-weight: lighter;
+  font-size: 4vw;
+  margin-top: 5rem;
+}
+
+.bigTxt {
+  font-size: 10vw;
+  line-height: 1;
+  margin: 0 1rem;
+  font-weight: bold;
+}
+.counter {
+  text-align: center;
+}
+.counter span {
+  font-size: 2vw;
+}
+.secondsCount,
+.minutesCount,
+.hoursCount {
+  width: 17vw;
+}
+
+@media (max-width: 480px) {
+  .search {
+    margin-left: 0.6rem;
+    margin-top: -0.2rem;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 4rem;
+
+    &__icon {
+      fill: $clr-gray400;
+      z-index: 99;
+      width: 35px;
+    }
+
+    &__close {
+      right: -4px;
+      fill: white;
+      transition: 500ms fill ease-in;
+    }
+
+    &__delete {
+      fill: $clr-gray350;
+      right: 1.5rem;
+      display: none;
+      padding: 0;
+      // background-color: #4f546c;
+    }
+
+    input {
+      //box-shadow: 0 0 10px 2px $clr-gray300;
+      border: none;
+      border-radius: 50%;
+      padding: 0.5rem 1.1rem 0.5rem 1rem;
+      font-family: inherit;
+      font-size: 1rem;
+      color: $clr-gray400;
+      outline: none;
+      width: 1rem;
+      transition: 500ms width ease-in-out, 500ms padding ease-in-out,
+        500ms border-radius ease-in-out;
+
+      &:not(:placeholder-shown) ~ .search__delete {
+        display: block;
+      }
+    }
+
+    //open state
+    &-open input {
+      width: 14.4rem;
+      padding: 1rem 4rem 1rem 2.5rem;
+      border-radius: $radius;
+    }
+    .search__delete_close {
+      display: none;
+    }
+
+    //when content is in text field show delete button
+    &-open svg.search__close {
+      fill: $clr-gray400;
+    }
+  }
+  .titleLbl {
+    font-size: 6vw;
+  }
+  .bigTxt {
+    font-size: 10vw;
+  }
+  .secondsCount,
+  .minutesCount,
+  .hoursCount {
+    width: 20vw;
+  }
+  .datePicker {
+    margin-top: 0.5rem;
+  }
+
+  .card-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    width: 13rem;
+    margin-left: 1.2rem;
+    z-index: 9;
+  }
+  .card {
+    margin-bottom: 0;
+    display: flex;
+  }
+  .card--image {
+    flex: 100%;
+    margin-top: 0.1rem;
+    border-radius: 10px;
+    transition: transform 0.2s;
+  }
+
+  .calendarBtn {
+    width: 35px;
+    height: 35px;
+    margin-left: 0.7rem;
+    top: 57px;
+    left: -1px;
+  }
+}
