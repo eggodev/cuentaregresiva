@@ -8,7 +8,6 @@ import CountDown from "./countDown";
 const DynamicBg = styled.div`
   background-image: url(${(props) => (props.bg ? props.bg : "none")});
   background-size: cover;
-  background-attachment: fixed;
   background-position: center center;
   position: absolute;
   top: 0px;
