@@ -52,7 +52,7 @@ body {
 
   svg {
     height: 2.5rem;
-    padding: 0.5rem;
+    padding: 0.1rem 0.2rem 0.5rem 0.2rem;
     position: absolute;
     cursor: pointer;
   }
@@ -211,6 +211,13 @@ body {
     justify-content: flex-start;
     align-items: center;
     height: 4rem;
+
+    svg {
+      height: 2.5rem;
+      padding: 0.4rem 0.2rem 0.8rem 0.1rem;
+      position: absolute;
+      cursor: pointer;
+    }
 
     &__icon {
       fill: $clr-gray400;
