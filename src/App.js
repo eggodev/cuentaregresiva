@@ -4,6 +4,7 @@ import "./App.scss";
 import SearchImages from "./searchImages";
 import styled from "styled-components";
 import CountDown from "./countDown";
+import ReactGa from "react-ga";
 
 const DynamicBg = styled.div`
   background-image: url(${(props) => (props.bg ? props.bg : "none")});
@@ -29,6 +30,9 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+    ReactGa.initialize("G-1MDFZTNN34");
+    ReactGa.pageview("/");
+
     var bg = localStorage.getItem("bg");
     if (bg) {
       this.setState({

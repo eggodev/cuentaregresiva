@@ -2,7 +2,7 @@
   "name": "countdown",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://eggodev.github.io/cuentaregresiva/",
+  "homepage": "https://eggodev.github.io/cuentaregresiva/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
@@ -14,6 +14,7 @@
     "react": "^17.0.2",
     "react-datepicker": "^4.2.1",
     "react-dom": "^17.0.2",
+    "react-ga": "^3.3.0",
     "react-helmet": "^6.1.0",
     "react-scripts": "4.0.3",
     "sass": "^1.39.0",
@@ -22,8 +23,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
